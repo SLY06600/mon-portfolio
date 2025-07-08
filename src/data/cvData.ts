@@ -8,7 +8,7 @@ export const cvData = {
     { icon: "email", text: "sylvain.baraduc@sfr.fr" },
     { icon: "phone", text: "06 80 33 73 52" },
     { icon: "location", text: "Antibes, France" },
-    { icon: "link", text: "", href: "" },
+    { icon: "link", text: "portfolio", href: "https://mon-portfolio-git-main-sylvain-baraduc-s-projects.vercel.app/" },
     { icon: "linkedin", text: "linkedin.com/in/sylvainbaraduc", href: "https://linkedin.com/in/sylvainbaraduc" },
     { icon: "gith", text: "github.com/sylvainbaraduc", href: "https://github.com/sylvainbaraduc" }
   ],
@@ -98,7 +98,7 @@ export const cvData = {
             "Utilisation de l'API OpenWeather pour récupérer les données météorologiques",
             "Affichage des prévisions météo pour plusieurs jours",
             "Interface utilisateur simple et intuitive",
-            
+
         ],
     },
     {
