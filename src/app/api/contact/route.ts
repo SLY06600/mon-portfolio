@@ -1,8 +1,6 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: Request) {
   try {
     const { name, email, message } = await request.json();
@@ -16,9 +14,19 @@ export async function POST(request: Request) {
       return NextResponse.json({ message: 'Email invalide' }, { status: 400 });
     }
 
+    const resendApiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+
+    if (!resendApiKey || !fromEmail) {
+      console.error("Clé RESEND_API_KEY ou RESEND_FROM_EMAIL manquante");
+      return NextResponse.json({ message: "Erreur configuration serveur." }, { status: 500 });
+    }
+
+    const resend = new Resend(resendApiKey);
+
     const { error } = await resend.emails.send({
-      from: `Portfolio Contact <${process.env.RESEND_FROM_EMAIL}>`,
-      to: ['sylvainbaraduc8556@gmail.com'], // Remplace par ton adresse réelle
+      from: `Portfolio Contact <${fromEmail}>`,
+      to: ['sylvainbaraduc8556@gmail.com'],
       subject: `Nouveau message de ${name}`,
       replyTo: email,
       html: `
@@ -34,6 +42,7 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ message: 'Message envoyé avec succès.' });
+
   } catch (err) {
     console.error('Erreur serveur :', err);
     return NextResponse.json({ message: 'Erreur serveur.' }, { status: 500 });
