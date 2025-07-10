@@ -1,0 +1,8 @@
+{
+  "hero.imageAlt": "Photo de Sylvain Baraduc",
+  "hero.greeting": "Bonjour, je suis <0>Sylvain Baraduc</0>",
+  "hero.description": "Développeur fullstack spécialisé en création d’interfaces modernes et performantes avec React, Next.js et Node.js.",
+  "hero.location": "Basé en France. Disponible pour missions freelance et collaborations techniques.",
+  "hero.cv": "Voir mon CV",
+  "hero.projects": "Mes projets"
+}

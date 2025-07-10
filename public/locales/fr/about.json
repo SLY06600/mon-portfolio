@@ -1,0 +1,9 @@
+{
+  "title": "À propos de moi",
+  "paragraph1": "Développeur fullstack passionné, j’aime concevoir des applications web modernes et utiles, avec une attention particulière portée à la performance, l’expérience utilisateur et la robustesse du back-end. Mes projets personnels m’ont permis de construire des solutions concrètes dans des domaines variés : réservation de biens, affichage météo, gestion de projets ou encore portfolio interactif.",
+  "paragraph2": "Ma stack principale inclut <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Express</strong> et <strong>MongoDB</strong>. J’accorde une grande importance à la qualité du code, à l’accessibilité et à l’optimisation des performances côté client comme côté serveur.",
+  "paragraph3": "Curieux et rigoureux, je suis en veille constante sur les bonnes pratiques de développement web : DevOps léger, tests automatisés, design systems, CI/CD ou encore intégration d’APIs tierces.",
+  "paragraph4": "Je cherche à m’investir dans des projets à impact réel, au sein d’une équipe qui valorise la clarté, la collaboration et l’amélioration continue.",
+  "cv": "Voir mon CV",
+  "motivation": "Voir ma lettre de motivation"
+}

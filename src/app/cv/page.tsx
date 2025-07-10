@@ -1,37 +1,38 @@
 "use client";
 
-import React, { useRef, useEffect, useState } from "react";
-import { useReactToPrint } from "react-to-print";
-import CVComponent from "@/components/CV";
+import React from "react";
+// import { useReactToPrint } from "react-to-print";
+// import CVComponent from "@/components/CV";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-import { cvData } from "../../data/cvData";
-import { cvDataNonInformatique } from "../../data/cvDataNonInformatique";
+// import { cvData } from "../../data/cvData";
+// import { cvDataNonInformatique } from "../../data/cvDataNonInformatique";
+import CvSwitcher from "@/components/CvSwitcher";
 // import { data } from "react-router-dom";
 
 export default function CV() {
-  const componentRef = useRef<HTMLDivElement>(null);
-  const [isMounted, setIsMounted] = useState(false);
+  // const componentRef = useRef<HTMLDivElement>(null);
+  // const [isMounted, setIsMounted] = useState(false);
 
   // On attend que le composant soit bien monté côté client
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  // useEffect(() => {
+  //   setIsMounted(true);
+  // }, []);
 
-  const handlePrint = useReactToPrint({
-   contentRef: componentRef,
-    documentTitle: "Mon_CV - Sylvain Baraduc",
-  });
+  // const handlePrint = useReactToPrint({
+  //  contentRef: componentRef,
+  //   documentTitle: "Mon_CV - Sylvain Baraduc",
+  // });
 
-  const [cvVersion, setCvVersion] = useState<"dev" | "autre">("dev");
+  // const [cvVersion, setCvVersion] = useState<"dev" | "autre">("dev");
 
-  if (!isMounted) return null; // Empêche rendu serveur et s’assure que ref est attaché
+  // if (!isMounted) return null; // Empêche rendu serveur et s’assure que ref est attaché
 
   return (
     <>
       <Navbar className="no-print" />
-      <div>
+      {/* <div>
         <div className="flex justify-end p-4 no-print">
           <button
             onClick={() => setCvVersion("dev")}
@@ -63,7 +64,8 @@ export default function CV() {
         <div ref={componentRef}>
           <CVComponent data={cvVersion === "dev" ? cvData : cvDataNonInformatique} />
         </div>
-      </div>
+      </div> */}
+      < CvSwitcher />
       <Footer />
     </>
   );

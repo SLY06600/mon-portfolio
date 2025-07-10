@@ -1,0 +1,9 @@
+{
+  "title": "About Me",
+  "paragraph1": "Passionate fullstack developer, I enjoy designing modern and useful web applications, with a focus on performance, user experience, and backend robustness. My personal projects have helped me build practical solutions in various areas: property booking, weather display, project management, and interactive portfolio.",
+  "paragraph2": "My main stack includes <strong>React</strong>, <strong>TypeScript</strong>, <strong>Node.js</strong>, <strong>Express</strong>, and <strong>MongoDB</strong>. I value clean code, accessibility, and optimizing performance both on the client and server sides.",
+  "paragraph3": "Curious and meticulous, I keep a close eye on web development best practices: lightweight DevOps, automated testing, design systems, CI/CD, and third-party API integration.",
+  "paragraph4": "I'm looking to contribute to meaningful projects within a team that values clarity, collaboration, and continuous improvement.",
+  "cv": "View my CV",
+  "motivation": "View my cover letter"
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Alternative Portfolio",
+  "subtitle": "A selection of personal projects built to explore new technologies or just out of curiosity.",
+  "viewMore": "View more →",
+  "toggle": "🇫🇷 Français",
+  "projects": [
+    {
+      "title": "Real Estate Rental App",
+      "description": "Web app for searching, booking, and managing rental properties, with payment system and admin dashboard. Stack: React, Node.js, MongoDB.",
+      "image": "https://source.unsplash.com/600x400/?real-estate,app",
+      "link": "#"
+    },
+    {
+      "title": "Restaurant Reservation App",
+      "description": "Reservation management tool with time slots, client interface and back-office. Email notifications and calendar integration.",
+      "image": "https://source.unsplash.com/600x400/?restaurant,booking",
+      "link": "#"
+    },
+    {
+        "title": "Weather App",
+        "description": "Displays weather forecasts by city using a third-party API, with responsive design and animations. Stack: React, Axios.",
+        "image": "https://source.unsplash.com/600x400/?weather,app",
+        "link": "#"
+        },
+        {
+        "title": "Interactive Portfolio",
+        "description": "Modern portfolio built with React featuring animations, contact form, and responsive design.",
+        "image": "https://source.unsplash.com/600x400/?portfolio,web",
+        "link": "#"
+        },
+        {
+        "title": "Project Management App",
+        "description": "Task and project tracking tool with user management, notifications, and calendar. Stack: React, Node.js, MongoDB.",
+        "image": "https://source.unsplash.com/600x400/?project-management,app",
+        "link": "#"
+    },
+    {
+      "title": "Hair Salon Booking App",
+      "description": "Appointment booking app for a hair salon, with client management and notifications.",
+      "image": "https://source.unsplash.com/600x400/?hair-salon,booking",
+      "link": "#"
+    }
+   
+  ]
+}

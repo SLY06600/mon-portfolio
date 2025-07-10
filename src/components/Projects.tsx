@@ -39,38 +39,51 @@ const projects = [
       "Utilisation de MongoDB pour stocker les données des campings et des réservations",
     ],
   },
-//   {
-//     title: "Application de gestion de tâches",
-//     description:
-//       "To-do list moderne avec React, Redux et Node.js pour la gestion des tâches.",
-//     image: "https://source.unsplash.com/600x400/?tasks",
-//     link: "#",
-//     points: [],
-//   },
-//   {
-//     title: "E-commerce Next.js",
-//     description:
-//       "Site e-commerce performant avec Next.js, Tailwind CSS et Stripe pour les paiements.",
-//     image: "https://source.unsplash.com/600x400/?ecommerce",
-//     link: "#",
-//     points: [],
-//   },
-//   {
-//     title: "Application de gestion de projet",
-//     description:
-//       "Application de gestion de projet avec React, Node.js et MongoDB pour la gestion des tâches et des équipes.",
-//     image: "https://source.unsplash.com/600x400/?project-management",
-//     link: "#",
-//     points: [],
-//   },
-//   {
-//     title: "CV interactif",
-//     description:
-//       "Portfolio moderne en React avec animation, formulaire de contact et design responsive.",
-//     image: "https://source.unsplash.com/600x400/?developer,portfolio",
-//     link: "#",
-//     points: [],
-//   },
+  {
+    title: "Application de réservation de salon de coiffure",
+    description:
+      "Création d’une application de réservation de salon de coiffure avec React et Node.js. Fonctionnalités : prise de rendez-vous, gestion des créneaux horaires, notifications par email.",
+    image: "https://source.unsplash.com/600x400/?hair-salon,booking",
+    link: "#",
+    points: [
+      "Création d’une application de réservation de salon de coiffure avec React et Node.js",
+      "Fonctionnalités : prise de rendez-vous, gestion des créneaux horaires, notifications par email",
+      "Utilisation de MongoDB pour stocker les données des coiffeurs et des réservations",
+    ],
+  },
+  {
+    title: "Application de gestion de projet",
+    description:
+      "Application de gestion de projet avec React, Node.js et MongoDB pour la gestion des tâches et des équipes.",
+    image: "https://source.unsplash.com/600x400/?project-management,app",
+    link: "#",
+    points: [
+      "Application de gestion de projet avec React, Node.js et MongoDB pour la gestion des tâches et des équipes.",
+    ],
+  },
+  {
+    title: "Application Météo",
+    description:
+      "Application météo en WPF avec C#. Utilisation de l'API OpenWeather pour récupérer les données météorologiques.",
+    image: "https://source.unsplash.com/600x400/?weather,app",
+    link: "#",
+    points: [
+      "Application météo en WPF avec C#",
+      "Utilisation de l'API OpenWeather pour récupérer les données météorologiques",
+      "Affichage des prévisions météo pour plusieurs jours",
+      "Interface utilisateur simple et intuitive",
+    ],
+  },
+  {
+    title: "CV interactif",
+    description:
+      "Portfolio moderne en React avec animation, formulaire de contact et design responsive.",
+    image: "https://source.unsplash.com/600x400/?portfolio,react",
+    link: "#",
+    points: [
+      "Portfolio moderne en React avec animation, formulaire de contact et design responsive.",
+    ],
+  },
 ];
 
 

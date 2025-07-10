@@ -1,4 +1,4 @@
-export const cvData = {
+export const cvDataStage = {
   personalInfo: {
     name: "Sylvain Baraduc",
     title: "Développeur Fullstack",
@@ -50,7 +50,7 @@ export const cvData = {
    
   ],
   accroche: "Développeur web fullstack autodidacte, je conçois des applications modernes orientées réservation, gestion et expérience utilisateur avec React, Node.js et MongoDB.",
- about: "Développeur passionné par le web depuis plusieurs années, j'ai réalisé de nombreux projets personnels axés sur la réservation en ligne (immobilier, restaurants, salons, campings...) en collaboration avec de petites entreprises. Je cherche aujourd'hui à rejoindre une entreprise dynamique pour un stage de validation, afin de consolider mes compétences dans un cadre professionnel et collaboratif.",
+ about: "Je suis passionné par le développement Web depuis maintenant de nombreuses années. J’ai réalisé des projets personnels, en lien avec la création d’espaces de réservation, pour des PME de divers secteurs. J’envisage de poursuivre ma formation pour développer mon employabilité, je souhaite intégrer une entreprise dynamique le temps d’un stage, pour valider ce projet.",
 
   personalProjects: [
     {

@@ -1,0 +1,47 @@
+{
+  "title": "Portfolio Alternatif",
+  "subtitle": "Une sélection de projets personnels réalisés pour explorer de nouvelles technologies ou simplement par curiosité.",
+  "viewMore": "Voir plus →",
+  "toggle": "🇬🇧 English",
+  "projects": [
+    {
+      "title": "Application de location immobilière",
+      "description": "Application web pour rechercher, réserver et gérer des biens à louer, avec système de paiement et tableau de bord admin. Stack : React, Node.js, MongoDB.",
+      "image": "https://source.unsplash.com/600x400/?real-estate,app",
+      
+      "link": "#"
+    },
+    {
+      "title": "Application de réservation restaurant",
+      "description": "Outil de gestion des réservations par créneau horaire, avec interface client et back-office. Notifications mail et intégration calendrier.",
+      "image": "https://source.unsplash.com/600x400/?restaurant,booking",
+      "link": "#"
+    }
+    ,
+    {
+      "title": "Application météo",
+      "description": "Affichage des prévisions météo par ville avec API tierce, design responsive et animations. Stack : React, Axios.",
+      "image": "https://source.unsplash.com/600x400/?weather,app",
+      "link": "#"
+    },
+    {
+      "title": "Portfolio interactif",
+      "description": "Portfolio moderne en React avec animation, formulaire de contact et design responsive.",
+      "image": "https://source.unsplash.com/600x400/?portfolio,web",
+      "link": "#"
+    },
+    {
+      "title": "Application de gestion de projets",
+      "description": "Outil de suivi de tâches et projets avec gestion des utilisateurs, notifications et calendrier. Stack : React, Node.js, MongoDB.",
+      "image": "https://source.unsplash.com/600x400/?project-management,app",
+      "link": "#"
+    },
+    {
+     "title": "Application de reservation de sallon de coiffure",
+        "description": "Application de réservation de créneaux pour un salon de coiffure, avec gestion des clients et notifications.",
+        "image": "https://source.unsplash.com/600x400/?hair-salon,booking",
+        "link": "#"
+
+    }
+  ]
+}

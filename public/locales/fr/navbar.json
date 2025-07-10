@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "title": "Mon Portfolio",
+    "cv": "CV",
+    "projects": "Projets",
+    "portfolio": "Portfolio",
+    "coverLetter": "Lettre de motivation",
+    "contact": "Contact",
+    "about": "À propos"
+  }
+}

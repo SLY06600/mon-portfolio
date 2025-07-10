@@ -1,11 +1,18 @@
-// src/components/Hero.tsx
-"use client";
+'use client';
+
+import React from "react";
+import '@/i18n/client';
+
 
 import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useTranslation, Trans } from "react-i18next";
+
 
 export default function Hero() {
+  const { t } = useTranslation("common");
+
   return (
     <section className="py-24 px-6 bg-white text-gray-800">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -18,7 +25,7 @@ export default function Hero() {
         >
           <Image
             src="/profil.jpg"
-            alt="Photo de Sylvain Baraduc"
+            alt={t("hero.imageAlt")}
             width={250}
             height={250}
             className="rounded-full grayscale hover:grayscale-0 transition duration-500 shadow-lg border-4 border-blue-100"
@@ -33,24 +40,24 @@ export default function Hero() {
           className="text-center md:text-left"
         >
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Bonjour, je suis <span className="text-blue-700">Sylvain Baraduc</span>
+<Trans
+  i18nKey="hero.greeting"
+  components={{ blue: <span className="text-blue-700" /> }}
+/>
+
           </h1>
-          <p className="text-lg text-gray-600 mb-6">
-            Développeur fullstack spécialisé en création d’interfaces modernes et performantes avec React, Next.js et Node.js.
-          </p>
-          <p className="text-sm text-gray-500 mb-8">
-            Basé en France. Disponible pour missions freelance et collaborations techniques.
-          </p>
+          <p className="text-lg text-gray-600 mb-6">{t("hero.description")}</p>
+          <p className="text-sm text-gray-500 mb-8">{t("hero.location")}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <Link href="/cv">
               <button className="bg-blue-700 text-white px-6 py-3 rounded-lg hover:bg-blue-800 transition">
-                Voir mon CV
+                {t("hero.cv")}
               </button>
             </Link>
             <Link href="/projects">
               <button className="border border-blue-700 text-blue-700 px-6 py-3 rounded-lg hover:bg-blue-50 transition">
-                Mes projets
+                {t("hero.projects")}
               </button>
             </Link>
           </div>

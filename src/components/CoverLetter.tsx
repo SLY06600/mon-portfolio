@@ -45,12 +45,12 @@ const CoverLetter: React.FC = () => {
       <p className="mb-4">
         Je vous invite à consulter mon portfolio à l’adresse suivante :{" "}
         <a
-          href="https://tonportfolio.com"
+          href="https://mon-portfolio-mauve-six.vercel.app"
           className="text-blue-600 hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
-          tonportfolio.com
+          https://mon-portfolio-mauve-six.vercel.app
         </a>. Je serais heureux d’échanger avec vous pour vous présenter mes projets en détail et discuter de vos besoins.
       </p>
 

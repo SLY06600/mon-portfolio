@@ -1,0 +1,11 @@
+{
+  "navbar": {
+    "title": "My Portfolio",
+    "cv": "Resume",
+    "projects": "Projects",
+    "portfolio": "Portfolio",
+    "coverLetter": "Cover Letter",
+    "contact": "Contact",
+    "about": "About"
+  }
+}

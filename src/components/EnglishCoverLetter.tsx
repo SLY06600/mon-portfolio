@@ -41,12 +41,12 @@ const EnglishCoverLetter: React.FC = () => {
       <p className="mb-4">
         You can view my portfolio here:{" "}
         <a
-          href="https://tonportfolio.com"
+          href="https://mon-portfolio-mauve-six.vercel.app"
           className="text-blue-600 hover:underline"
           target="_blank"
           rel="noopener noreferrer"
         >
-          tonportfolio.com
+          https://mon-portfolio-mauve-six.vercel.app
         </a>. I would be happy to discuss my projects further or explore how I could contribute to your team.
       </p>
 

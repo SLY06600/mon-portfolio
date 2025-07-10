@@ -1,40 +1,40 @@
-// src/components/Navbar.tsx
-
 "use client";
 import React from "react";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 type NavbarProps = {
   className?: string;
 };
 
 const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
+  const { t } = useTranslation("navbar"); // namespace commun
+
   return (
     <nav className={`bg-gray-800 text-white px-6 py-4 shadow-md ${className}`}>
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/acceuil" className="text-xl font-bold">
-          Mon Portfolio
+          {t("navbar.title")}
         </Link>
         <div className="space-x-4">
           <Link href="/cv" className="hover:underline">
-            CV
+            {t("navbar.cv")}
           </Link>
           <Link href="/projects" className="hover:underline">
-            Projets
+            {t("navbar.projects")}
           </Link>
           {/* <Link href="/portfolio" className="hover:underline">
-            Portfolio
+            {t("navbar.portfolio")}
           </Link> */}
           <Link href="/lettre" className="hover:underline">
-            Lettre de motivation
+            {t("navbar.coverLetter")}
           </Link>
           <Link href="/contact" className="hover:underline">
-            Contact
+            {t("navbar.contact")}
           </Link>
           <Link href="/about" className="hover:underline">
-           About  
-            </Link>
-
+            {t("navbar.about")}
+          </Link>
         </div>
       </div>
     </nav>
@@ -42,4 +42,3 @@ const Navbar: React.FC<NavbarProps> = ({ className = "" }) => {
 };
 
 export default Navbar;
-
