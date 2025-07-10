@@ -8,7 +8,7 @@
       "title": "Application de location immobilière",
       "description": "Application web pour rechercher, réserver et gérer des biens à louer, avec système de paiement et tableau de bord admin. Stack : React, Node.js, MongoDB.",
       "image": "https://source.unsplash.com/600x400/?real-estate,app",
-      
+
       "link": "#"
     },
     {
@@ -37,7 +37,7 @@
       "link": "#"
     },
     {
-     "title": "Application de reservation de sallon de coiffure",
+     "title": "Application de reservation de salon de coiffure",
         "description": "Application de réservation de créneaux pour un salon de coiffure, avec gestion des clients et notifications.",
         "image": "https://source.unsplash.com/600x400/?hair-salon,booking",
         "link": "#"
