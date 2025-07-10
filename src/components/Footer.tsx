@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import { cvData } from "../data/cvData";
 
 export default function Footer() {
+  
   const { t } = useTranslation("footer"); // Assurez-vous que le namespace est correct
   const [year, setYear] = useState<number | null>(null);
 

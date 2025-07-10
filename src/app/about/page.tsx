@@ -26,7 +26,7 @@ const AboutPage = () => {
 
         <div className="mt-10 space-y-4">
           <Link
-            href="/docs/CV_Sylvain_Baraduc.pdf"
+            href="/docs/CV_Sylvain_Baraduc-1.pdf"
             target="_blank"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition"
           >
@@ -36,7 +36,7 @@ const AboutPage = () => {
           <br />
 
           <Link
-            href="/docs/Lettre_Motivation_Sylvain_Baraduc.pdf"
+            href="/docs/Mon_CV.pdf"
             target="_blank"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition"
           >
