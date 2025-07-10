@@ -1,16 +1,26 @@
 // LettreDev.tsx
+import { cvData } from "@/data/cvData";
 import React from "react";
 
-const LettreDev: React.FC = () => (
+
+
+const LettreDev: React.FC = () => {
+
+   const email = cvData.contact.find((item) => item.icon === "email")?.text;
+  const phone = cvData.contact.find((item) => item.icon === "phone")?.text;
+  const location = cvData.contact.find((item) => item.icon === "location")?.text;
+ 
+return (
+  
   <section className="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-2xl text-gray-900 leading-relaxed">
     {/* Expéditeur à gauche */}
     {/* Coordonnées expéditeur à droite */}
       <div className="text-right mb-6">
-        <p><strong>Jean Dupont</strong></p>
-        <p>123 Rue des Développeurs</p>
-        <p>75000 Paris</p>
-        <p>jean.dupont@email.com</p>
-        <p>06 12 34 56 78</p>
+        <p><strong>{cvData.personalInfo.name}</strong></p>
+        <p>{cvData.personalInfo.address}</p>
+        <p>{cvData.personalInfo.postalCode}-{location}</p>
+        <p>{email}</p>
+        <p>{phone}</p>
         {/* <p className="mt-2">Paris, le 8 juillet 2025</p> */}
       </div>
 
@@ -25,7 +35,8 @@ const LettreDev: React.FC = () => (
 
     {/* Date à droite */}
     <div className="text-right mb-6">
-      <p>Paris, le 8 juillet 2025</p>
+     <p>{location}, le {new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}</p>
+
     </div>
 
     {/* Destinataire
@@ -68,8 +79,9 @@ const LettreDev: React.FC = () => (
     <p className="mb-6">
       Dans l’attente de votre retour, je vous prie d’agréer, Madame, Monsieur, l’expression de mes salutations distinguées.
     </p>
-    <p className="font-semibold">Jean Dupont</p>
+    <p className="font-semibold">{cvData.personalInfo.name}</p>
   </section>
 );
+};
 
 export default LettreDev;

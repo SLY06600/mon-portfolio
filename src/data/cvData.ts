@@ -1,8 +1,14 @@
+
+
+
 export const cvData = {
   personalInfo: {
     name: "Sylvain Baraduc",
     title: "Développeur Fullstack",
     photo: "/photo.jpg",
+    address: "327 Chemin du Petit Four ",
+    postalCode: "06600",
+  
   },
   contact: [
     { icon: "email", text: "sylvain.baraduc@sfr.fr" },
