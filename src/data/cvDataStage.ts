@@ -53,7 +53,7 @@ export const cvDataStage = {
 
    
   ],
-  accroche: "Développeur web fullstack autodidacte, je conçois des applications modernes orientées réservation, gestion et expérience utilisateur avec React, Node.js et MongoDB.",
+accroche: "Développeur web fullstack autodidacte, je conçois des applications modernes orientées réservation, gestion et expérience utilisateur avec React, Node.js et MongoDB.",
  about: "Je suis passionné par le développement Web depuis maintenant de nombreuses années. J’ai réalisé des projets personnels, en lien avec la création d’espaces de réservation, pour des PME de divers secteurs. J’envisage de poursuivre ma formation pour développer mon employabilité, je souhaite intégrer une entreprise dynamique le temps d’un stage, pour valider ce projet.",
 
   personalProjects: [

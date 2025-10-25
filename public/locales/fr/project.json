@@ -9,38 +9,44 @@
       "description": "Application web pour rechercher, réserver et gérer des biens à louer, avec système de paiement et tableau de bord admin. Stack : React, Node.js, MongoDB.",
       "image": "https://source.unsplash.com/600x400/?real-estate,app",
 
-      "link": "#"
+      "link": "#",
+      "slug": "/projects/application-location-immobiliere"
     },
     {
       "title": "Application de réservation restaurant",
       "description": "Outil de gestion des réservations par créneau horaire, avec interface client et back-office. Notifications mail et intégration calendrier.",
       "image": "https://source.unsplash.com/600x400/?restaurant,booking",
-      "link": "#"
+      "link": "#",
+      "slug": "/projects/application-reservation-restaurant"
     }
     ,
     {
       "title": "Application météo",
       "description": "Affichage des prévisions météo par ville avec API tierce, design responsive et animations. Stack : React, Axios.",
       "image": "https://source.unsplash.com/600x400/?weather,app",
-      "link": "#"
+      "link": "#",
+      "slug": "/projects/application-meteo"
     },
     {
       "title": "Portfolio interactif",
       "description": "Portfolio moderne en React avec animation, formulaire de contact et design responsive.",
       "image": "https://source.unsplash.com/600x400/?portfolio,web",
-      "link": "#"
+      "link": "#",
+      "slug": "/projects/Portfolio-interactif"
     },
     {
       "title": "Application de gestion de projets",
       "description": "Outil de suivi de tâches et projets avec gestion des utilisateurs, notifications et calendrier. Stack : React, Node.js, MongoDB.",
       "image": "https://source.unsplash.com/600x400/?project-management,app",
-      "link": "#"
+      "link": "#",
+      "slug": "/projects/application-gestion-projets"
     },
     {
      "title": "Application de reservation de salon de coiffure",
         "description": "Application de réservation de créneaux pour un salon de coiffure, avec gestion des clients et notifications.",
         "image": "https://source.unsplash.com/600x400/?hair-salon,booking",
-        "link": "#"
+        "link": "#",
+        "slug": "/projects/application-reservation-salon-coiffure"
 
     }
   ]
