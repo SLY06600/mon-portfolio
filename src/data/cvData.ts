@@ -1,4 +1,5 @@
 export const cvData = {
+  accroche: "Développeur web fullstack passionné par la création d'applications modernes et performantes.", 
   personalInfo: {
     name: "Sylvain Baraduc",
     title: "Développeur Fullstack",
