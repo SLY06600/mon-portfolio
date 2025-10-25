@@ -125,7 +125,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function ApplicationLocationImmobiliere() {
-  const [activeTab, setActiveTab] = useState<"description" | "features" | "screenshots" | "code">("description");
+  const tabs = ["description", "features", "screenshots", "code"] as const;
+  type Tab = (typeof tabs)[number];
+  const [activeTab, setActiveTab] = useState<Tab>("description");
   const [openFeatureIndex, setOpenFeatureIndex] = useState<number | null>(null);
   const [openScreenshotIndex, setOpenScreenshotIndex] = useState<number | null>(null);
 
@@ -174,13 +176,12 @@ export default function ApplicationLocationImmobiliere() {
         <h1 className="text-4xl font-bold text-center text-gray-800">
           Application de location immobilière
         </h1>
-
         {/* Onglets */}
         <div className="flex justify-center space-x-4 mb-8">
-          {["description", "features", "screenshots", "code"].map((tab) => (
+          {tabs.map((tab) => (
             <button
               key={tab}
-              onClick={() => setActiveTab(tab as any)}
+              onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 rounded-t-lg font-semibold ${
                 activeTab === tab
                   ? "bg-blue-500 text-white"
