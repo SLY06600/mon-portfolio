@@ -1,8 +1,12 @@
 {
-  "hero.imageAlt": "Photo of Sylvain Baraduc",
-  "hero.greeting": "Hello, I'm <0>Sylvain Baraduc</0>",
-  "hero.description": "Fullstack developer specialized in building modern and high-performance interfaces using React, Next.js, and Node.js.",
-  "hero.location": "Based in France. Available for freelance work and technical collaborations.",
-  "hero.cv": "View my CV",
-  "hero.projects": "My projects"
+  "hero": {
+    "hello": "Hi, I'm  <blue> Sylvain Baraduc</blue>, I am a",
+    "greetingWords": ["Developer", "Creator", "Passionate"],
+    "description": "I create modern, high-performance, and elegant applications.",
+    "location": "📍 Based in Antibes, France",
+    "cv": "View my CV",
+    "projects": "My Projects",
+    "imageAlt": "Profile photo"
+  }
 }
+

@@ -36,7 +36,7 @@ const AboutPage = () => {
           <br />
 
           <Link
-            href="/docs/Mon_CV.pdf"
+            href="/docs/Motivation_Sylvain_Baraduc.pdf"
             target="_blank"
             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition"
           >

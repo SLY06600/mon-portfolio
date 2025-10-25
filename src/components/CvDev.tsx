@@ -41,14 +41,14 @@ const iconMap: { [key: string]: React.ReactElement } = {
   location: <IconLocation />,
   link: <IconLink />,
   linkedin: <FaLinkedin />,
-  gith: <FaGithub />,
+  github: <FaGithub />,
 };
 
 // Type (optionnel) pour la prop (à adapter selon ta structure réelle)
 interface CVData {
   personalInfo: { name: string; title: string };
   contact: { icon: string; text: string; href?: string }[];
-  technicalSkills: string[];
+  technicalSkills: { [category: string]: string[] };
   softSkills: string[];
   languages: string[];
   interests: string[];
@@ -84,12 +84,12 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
         <div className="bg-blue-900 text-white p-2 md:col-span-1 flex flex-col text-xs">
           <div className="text-center">
             <h2 className="text-lg font-bold mt-2">{data.personalInfo.name}</h2>
-            <p className="text-[10px] text-blue-300 mt-1">{data.personalInfo.title}</p>
+            <p className="text-[10px] text-black-300 mt-1">{data.personalInfo.title}</p>
           </div>
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Contact</h3>
-            <ul className="mt-2 space-y-1 text-[10px] text-blue-200">
+            <ul className="mt-2 space-y-1 text-[10px] text-black-200">
               {data.contact.map(({ icon, text, href }, i) => (
                 <li key={i}>
                   {iconMap[icon]}
@@ -105,18 +105,40 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
             </ul>
           </div>
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Compétences techniques</h3>
             <ul className="mt-2 space-y-1 text-[10px] text-blue-300">
               {data.technicalSkills.map((skill, i) => (
                 <li key={i}>{skill}</li>
               ))}
             </ul>
-          </div>
+          </div> */}
+
+          
+          <div className="mt-4">
+  <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">
+    Compétences techniques
+  </h3>
+
+  <div className="mt-2 space-y-2 text-[10px] text-black-300">
+    {Object.entries(data.technicalSkills).map(([category, skills]) => (
+      <div key={category}>
+        <p className="font-medium font-semibold text-neutral-900 dark:text-gray-400 capitalize">{category} :</p>
+        <ul className="list-disc list-inside pl-2">
+          {skills.map((skill, i) => (
+            <li key={i}>{skill}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
+
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Soft skills</h3>
-            <ul className="mt-2 list-disc list-inside text-[10px] text-blue-300 space-y-0.5">
+            <ul className="mt-2 list-disc list-inside text-[10px] text-black-300 space-y-0.5">
               {data.softSkills.map((skill, i) => (
                 <li key={i}>{skill}</li>
               ))}
@@ -125,7 +147,7 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Langues</h3>
-            <ul className="mt-2 space-y-0.5 text-[10px] text-blue-300">
+            <ul className="mt-2 space-y-0.5 text-[10px] text-black-300">
               {data.languages.map((lang, i) => (
                 <li key={i}>{lang}</li>
               ))}
@@ -134,7 +156,7 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Centres d’intérêt</h3>
-            <ul className="mt-2 list-disc list-inside text-[10px] text-blue-300 space-y-0.5">
+            <ul className="mt-2 list-disc list-inside text-[10px] text-black-300 space-y-0.5">
               {data.interests.map((interest, i) => (
                 <li key={i}>{interest}</li>
               ))}
@@ -158,9 +180,9 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
             <ul className="space-y-2">
               {data.experiences.map(({ title, company, period, location, description }, i) => (
                 <li key={i}>
-                  <p className="font-semibold text-[11px]">
+                  <h4 className="font-semibold ">
                     {title} — {company}
-                  </p>
+                  </h4>
                   <p className="italic text-[9px]">
                     {location} — {period}
                   </p>

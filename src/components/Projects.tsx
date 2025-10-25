@@ -8,7 +8,7 @@ const projects = [
     description:
       "Application web pour rechercher, réserver et gérer des biens à louer, avec système de paiement et tableau de bord admin. Stack : React, Node.js, MongoDB.",
     image: "https://source.unsplash.com/600x400/?real-estate,app",
-    link: "#",
+    link: "/projects/application-de-location-immobiliere",
     points: [
       "Développement d’une plateforme de gestion de locations avec React et Node.js",
       "Fonctionnalités : recherche, réservation, gestion des contrats",

@@ -1,7 +1,7 @@
 export const cvDataStage = {
   personalInfo: {
     name: "Sylvain Baraduc",
-    title: "Développeur Fullstack",
+    title: "Développeur Fullstack — Stage",
     photo: "/photo.jpg",
   },
   contact: [
@@ -12,6 +12,7 @@ export const cvDataStage = {
     { icon: "linkedin", text: "linkedin.com/in/sylvainbaraduc", href: "https://linkedin.com/in/sylvainbaraduc" },
     { icon: "gith", text: "github.com/sylvainbaraduc", href: "https://github.com/sylvainbaraduc" }
   ],
+
 
   technicalSkills: [
   "React (hooks, context, SSR)",
@@ -46,6 +47,9 @@ export const cvDataStage = {
     "Espagnol — Notions",
   ],
   interests: [
+    "Voyages",
+    "Musique",
+    "Documentaires scientifiques et historiques"
 
    
   ],

@@ -5,19 +5,22 @@ const projects = [
     title: "Application de location immobilière",
     description: "Plateforme web avec réservation, tableau de bord, React/Node/MongoDB.",
     image: "https://source.unsplash.com/600x400/?real-estate",
-    link: "#",
+    slug: "real-estate",
+    link: `/projects/real-estate`,
   },
   {
     title: "Application de réservation restaurant",
     description: "Réservations en ligne avec créneaux et notifications. Stack : React, Express.",
     image: "https://source.unsplash.com/600x400/?restaurant",
-    link: "#",
+    slug: "restaurant-reservation",
+    link: `/projects/restaurant-reservation`,
   },
   {
     title: "E-commerce Next.js",
     description: "Site e-commerce moderne avec Next.js, Stripe, Tailwind CSS.",
     image: "https://source.unsplash.com/600x400/?ecommerce",
-    link: "#",
+    slug: "ecommerce-nextjs",
+    link: `/projects/ecommerce-nextjs`,
   },
 ];
 

@@ -59,7 +59,11 @@ export const cvDataEnglish = {
     "Spanish — Basic knowledge",
   ],
 
-  interests: [],
+  interests: [
+    "Travel",
+    "Music",
+    "Scientific and historical documentaries",
+  ],
 
   accroche:
     "Self-taught fullstack web developer, I build modern applications focused on booking, management, and user experience using React, Node.js, and MongoDB.",

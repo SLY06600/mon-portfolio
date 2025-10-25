@@ -47,7 +47,7 @@ const iconMap: { [key: string]: React.ReactElement } = {
 interface CVData {
   personalInfo: { name: string; title: string };
   contact: { icon: string; text: string; href?: string }[];
-  technicalSkills: string[];
+  technicalSkills: { [category: string]: string[] };
   softSkills: string[];
   languages: string[];
   interests: string[];
@@ -102,14 +102,36 @@ export default function CVComponent({ data }: CVComponentProps) {
             </ul>
           </div>
 
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Compétences techniques</h3>
             <ul className="mt-2 space-y-1 text-[10px] text-blue-300">
               {data.technicalSkills.map((skill, i) => (
                 <li key={i}>{skill}</li>
               ))}
             </ul>
-          </div>
+          </div> */}
+
+          <div className="mt-4">
+  <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">
+    Compétences techniques
+  </h3>
+
+  <div className="mt-2 space-y-2 text-[10px] text-blue-300">
+    {Object.entries(data.technicalSkills).map(([category, skills]) => (
+      <div key={category}>
+        <p className="font-medium text-blue-400 capitalize">{category}</p>
+        <ul className="list-disc list-inside pl-2">
+          {skills.map((skill, i) => (
+            <li key={i}>{skill}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</div>
+
+
+          
 
           <div className="mt-4">
             <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Soft skills</h3>
