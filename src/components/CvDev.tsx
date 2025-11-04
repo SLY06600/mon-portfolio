@@ -114,7 +114,7 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
             </ul>
           </div> */}
 
-          
+{/*           
           <div className="mt-4">
   <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">
     Compétences techniques
@@ -133,7 +133,36 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
     ))}
   </div>
 </div>
+ */}
+ <div className="mt-4">
+  <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">
+    Compétences techniques
+  </h3>
 
+  <div className="mt-2 space-y-2 text-[10px] text-black-300">
+    {Object.entries(data.technicalSkills).map(([category, skills]) => (
+      <div key={category}>
+        <p className="font-semibold text-neutral-900 capitalize">{category} :</p>
+
+        {category === "languages" ? (
+          // 👉 Affichage en ligne, séparé par des virgules
+          <p className="text-[10px] text-black-300 ml-2">
+            {skills.join(", ")}
+          </p>
+        ) : (
+          // 👉 Les autres catégories restent en liste
+          <ul className="list-disc list-inside pl-2">
+            {skills.map((skill, i) => (
+              <li key={i}>{skill}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    ))}
+  </div>
+</div>
+
+ 
 
 
           <div className="mt-4">
@@ -154,15 +183,25 @@ const CvDev: React.FC<CVComponentProps> = ({ data }) => (
             </ul>
           </div>
 
-          <div className="mt-4">
-            <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Centres d’intérêt</h3>
-            <ul className="mt-2 list-disc list-inside text-[10px] text-black-300 space-y-0.5">
-              {data.interests.map((interest, i) => (
-                <li key={i}>{interest}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
+  {/* legacy simple list removed; using badge-style interests below */}
+  <div className="mt-4">
+    <h3 className="text-sm font-semibold border-b border-blue-400 pb-1">Centres d’intérêt</h3>
+    {/* <div className="flex flex-wrap gap-1 mt-1">
+      {data.interests.map((interest, i) => (
+        <span
+          key={i}
+          className="bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full text-[9px]"
+        >
+          {interest}
+        </span>
+      ))}
+    </div> */}
+     <p className="mt-2 text-[10px] text-black-300">
+    {data.interests.join(", ")}
+  </p>
+  </div>
+</div>
+
 
         {/* Colonne droite */}
         <div className="p-3 md:col-span-2 text-[10px] space-y-3">

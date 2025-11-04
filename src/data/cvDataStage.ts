@@ -10,7 +10,7 @@ export const cvDataStage = {
     { icon: "location", text: "Antibes, France" },
     { icon: "link", text: "Mon Portfolio", href: "https://mon-portfolio-git-main-sylvain-baraduc-s-projects.vercel.app/" },
     { icon: "linkedin", text: "linkedin.com/in/sylvainbaraduc", href: "https://linkedin.com/in/sylvainbaraduc" },
-    { icon: "gith", text: "github.com/sylvainbaraduc", href: "https://github.com/sylvainbaraduc" }
+    { icon: "gith", text: "github.com/sylvainbaraduc", href: "https://github.com/SLY06600" }
   ],
 
 

@@ -10,7 +10,7 @@
     margin: 0 !important;
     padding: 0 !important;
     font-size: 10pt !important;
-    line-height: 1.8 !important;
+    line-height: 1.85 !important;
     overflow: visible !important;
     background: white !important;
     -webkit-print-color-adjust: exact !important;
@@ -37,7 +37,7 @@
   }
 
   .bg-blue-900 {
-    width: 65% !important;
+    width: 75% !important;
     padding: 8px !important;
     box-sizing: border-box;
   }

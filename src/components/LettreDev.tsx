@@ -28,9 +28,9 @@ return (
       <div className="mb-6">
         <p><strong>À l’attention de Madame, Monsieur</strong></p>
         <p>Responsable du recrutement</p>
-        <p>Entreprise Digitale</p>
-        <p>45 Avenue du Web</p>
-        <p>75010 Paris</p>
+        <p>Entreprise Atos</p>
+        <p></p>
+        <p>06 Valbonne</p>
       </div>
 
     {/* Date à droite */}
@@ -50,13 +50,13 @@ return (
 
     {/* Objet */}
     <p className="mb-6 font-semibold">
-      Objet : Candidature spontanée – Développeur Fullstack JavaScript/TypeScript
+      Objet : Candidature au poste de {cvData.personalInfo.title}
     </p>
 
     {/* Corps */}
     <p className="mb-4">Madame, Monsieur,</p>
     <p className="mb-4">
-      Passionné par le développement web et les solutions digitales innovantes, je vous adresse ma candidature en tant que développeur fullstack. Vous trouverez ci-joint mon portfolio, qui illustre mes compétences techniques, mon sens du détail et mon attachement à la qualité.
+      Passionné par le développement web et les solutions digitales innovantes, je vous adresse ma candidature {/*en tant que*/} pour un poste de  { cvData.personalInfo.title}. Vous trouverez ci-joint mon portfolio, qui illustre mes compétences techniques, mon sens du détail et mon attachement à la qualité.
     </p>
     <p className="mb-4">
       Formé au développement web avec une spécialisation en JavaScript/TypeScript, je maîtrise des technologies telles que <strong>React, Node.js, Express</strong> et <strong>MongoDB</strong>. Je porte également une attention particulière au design responsive ainsi qu’à l’optimisation front-end. Mon portfolio comprend des projets personnels et collaboratifs, allant d’applications web dynamiques à des API sur mesure.

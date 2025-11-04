@@ -1,0 +1,665 @@
+[
+  {
+    "slug": "application-de-location-immobiliere",
+    "title": "Application de location immobilière",
+    "image": "https://source.unsplash.com/600x400/?real-estate,app",
+    "details": {
+        "title": "Application de location immobilière complète",
+        "subtitle": "Application web complète permettant la recherche, la réservation et la gestion des biens à louer."
+        
+    },
+    "description": "Application web complète permettant la recherche, la réservation et la gestion des biens à louer.",
+    "features": [
+      "Recherche et filtrage des biens à louer",
+      "Réservation en ligne avec gestion des disponibilités",
+      "Tableau de bord admin pour gérer les biens et utilisateurs",
+      "Notifications par email lors de nouvelles réservations"
+    ],
+    "screenshots": [
+      { "src": "/screenshots/home.png", "title": "Page d'accueil" },
+      { "src": "/screenshots/dashboard.png", "title": "Tableau de bord admin" },
+      { "src": "/screenshots/reservation.png", "title": "Réservation d'un bien" }
+    ],
+    "codeSnippets": [
+      {
+        "title": "API Route - Récupération des biens",
+        "code": "app.get('/api/properties', async (req, res) => { const properties = await Property.find(); res.json(properties); });"
+      },
+{
+  "title": "Composant React - Liste des biens",
+  "code": "export default function Home() {return (`<div class=\"p-6\"><h1 class=\"text-3xl font-bold mb-6\">Liste des logements</h1><div class=\"flex flex-wrap justify-center gap-4\">{logements.map((logement, index) => (<RentalCard key={index} {...logement} />))}</div></div>`);}"
+}
+
+    ],
+    "tech": ["Next.js", "MongoDB", "Tailwind CSS", "TypeScript", "Express", "Java", "C#"],
+    "github": "https://github.com/SLY06600/LocationImmobiliere",
+    "live": "https://monapplicationlocationimmobiliere.vercel.app/"
+  },
+  {
+  "slug": "application-de-reservation-restaurant",
+  "title": "Application de réservation restaurant",
+  "image": "https://st4.depositphotos.com/8911320/31209/i/1600/depositphotos_312096012-stock-photo-render-wooden-style-cafe-restaurant.jpg",
+  "description": "Outil backend complet pour gérer les réservations des restaurants, en attente du frontend.",
+  "features": [
+    "Gestion des réservations par créneau horaire",
+    "Back-office pour gérer les réservations et les tables",
+    "Notifications par email pour confirmer les réservations",
+    "API prête à être connectée à un frontend"
+  ],
+  "screenshots": [],
+  "codeSnippets": [
+    {
+      "title": "Exemple backend Java - Création d’une réservation",
+      "code": "POST /reservations → reservationService.createReservation(data);"
+    },
+    {
+      "title": "Exemple backend C# - Récupération des réservations",
+      "code": "[HttpGet] public IActionResult GetReservations() { return Ok(reservationService.GetAll()); }"
+    }
+  ],
+  "tech": ["Java", "C#", "Spring Boot", ".NET Core", "PostgreSQL"],
+  "github": "https://github.com/SLY06600/ReservationRestaurant",
+  "live": "https://reservation-restaurant-backend.vercel.app/"
+},
+
+  {
+  "slug": "application-meteo",
+  "title": "Application météo (WPF C#)  et une autre en React (JavaScript)",
+  "description": "Application desktop en WPF affichant les prévisions météo par ville, avec design MVVM, animations et consommation de l'API OpenWeatherMap.",
+  "features": [
+    "Recherche de la météo par ville",
+    "Affichage des prévisions sur plusieurs jours",
+    "Design responsive et animations WPF",
+    "Architecture MVVM avec Models, ViewModels et Views",
+    "Consommation de l'API OpenWeatherMap pour récupérer les données"
+  ],
+  "structure": [
+    {
+      "folder": "Models",
+      "description": "Classes représentant les données météo, forecasts et villes."
+    },
+    {
+      "folder": "ViewModels",
+      "description": "Logique métier et liaison entre les Models et les Views."
+    },
+    {
+      "folder": "Views",
+      "description": "XAML et interface utilisateur."
+    },
+    {
+      "folder": "Services",
+      "description": "Appels à l'API OpenWeatherMap, parsing JSON et gestion des erreurs."
+    },
+    {
+      "folder": "Utils",
+      "description": "Fonctions utilitaires, conversion unités, formatage dates, etc."
+    }
+  ],
+  "screenshots": [
+    { "src": "/screenshots/weather-home.png", "title": "Page d'accueil WPF" },
+    { "src": "/screenshots/weather-forecast.png", "title": "Prévisions météo" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Appel API OpenWeatherMap",
+      "code": "public async Task<WeatherData> GetWeatherAsync(string city) { var response = await httpClient.GetAsync($\"https://api.openweathermap.org/data/2.5/weather?q={city}&appid=YOUR_API_KEY\"); return JsonConvert.DeserializeObject<WeatherData>(await response.Content.ReadAsStringAsync()); }"
+    },
+    {
+      "title": "Exemple ViewModel",
+      "code": "public class WeatherViewModel : INotifyPropertyChanged { public ObservableCollection<Forecast> Forecasts { get; set; } public async Task LoadWeather(string city) { /* logique */ } }"
+    },
+    {
+     "title": "WeatherService",
+     "code": "import axios from 'axios';\n\nconst API_KEY = process.env.REACT_APP_WEATHER_KEY;\nconsole.log('Clé API utilisée :', API_KEY);\n\nexport const fetchWeather = async (lat, lon) => {\n  const res = await axios.get('https://api.openweathermap.org/data/2.5/weather', {\n    params: {\n      lat,\n      lon,\n      appid: API_KEY,\n      units: 'metric',\n      lang: 'fr'\n    }\n  });\n  return res.data;\n};\n\nexport const fetchUVIndex = async (lat, lon) => {\n  const response = await fetch(\n    `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=hourly,daily,minutely,alerts&appid=${API_KEY}&units=metric`\n  );\n  const data = await response.json();\n  return data.current.uvi;\n};\n\nexport const fetchForecast = async (lat, lon) => {\n  const res = await axios.get('https://api.openweathermap.org/data/2.5/forecast', {\n    params: {\n      lat,\n      lon,\n      appid: API_KEY,\n      units: 'metric',\n      lang: 'fr'\n    }\n  });\n  return res.data;\n};"
+    }
+  ],
+  "tech": ["C#", "WPF", "MVVM", "OpenWeatherMap API", "JSON.NET"],
+  "github": "https://github.com/SLY06600/Meteo",
+  "live": "https://weather-dashboard-iota-nine.vercel.app/"
+},
+{
+  "slug": "zebra-lecteur-de-barcode",
+  "title": "Zebra - Lecteur de codes-barres",
+  "description": "Application mobile React Native avec Expo pour scanner et afficher les informations de produits via plusieurs APIs publiques.",
+  "features": [
+    "Scan de codes-barres avec la caméra du smartphone",
+    "Récupération des informations produit depuis OpenFoodFacts, OpenBeautyFacts, OpenProductsFacts, OpenPetFoodFacts",
+    "Affichage des détails du produit avec image, marque, catégories et Nutri-Score",
+    "Gestion des produits non trouvés avec fallback local"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/zebra-scan.png", "title": "Écran de scan du code-barres" },
+    { "src": "/screenshots/zebra-product.png", "title": "Détails du produit scanné" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Fonction fetch produit",
+      "code": "async function fetchProduct(barcode) { const res = await fetch(`https://world.openfoodfacts.org/api/v0/product/${barcode}.json`); const data = await res.json(); return data.status === 1 ? data.product : null; }"
+    },
+    {
+      "title": "Composant ProductCard",
+      "code": "const ProductCard = ({ product }) => (<View><Text>{product.name}</Text><Text>{product.brand}</Text></View>);"
+    }
+  ],
+  "tech": ["React Native", "Expo", "TypeScript", "OpenFoodFacts API", "OpenBeautyFacts API", "OpenProductsFacts API", "OpenPetFoodFacts API"],
+  "github": "https://github.com/SLY06600/Zebra",
+  "live": "https://zebra-barcode-scanner.vercel.app/"
+},
+{
+  "slug": "application-de-reservation-de-salon-de-coiffure",
+  "title": "Application de réservation salon de coiffure",
+  "description": "Application complète pour gérer les rendez-vous dans un salon de coiffure, avec backend Java et frontend React/JS.",
+  "features": [
+    "Page d'accueil présentant les services",
+    "Système de réservation en ligne par créneau",
+    "Page contact pour communiquer avec le salon",
+    "Gestion des services proposés",
+    "Tests de réservation automatisés pour validation"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/salon-home.png", "title": "Page d'accueil" },
+    { "src": "/screenshots/salon-reservation.png", "title": "Page de réservation" },
+    { "src": "/screenshots/salon-contact.png", "title": "Page contact" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Backend Java - Création d’une réservation",
+      "code": "POST /reservations → reservationService.createReservation(data);"
+    },
+    {
+      "title": "Frontend React - Formulaire de réservation",
+      "code": "function ReservationForm() { const handleSubmit = () => { /* logique réservation */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    },
+    {
+      "title": "Test réservation",
+      "code": "describe('Reservation', () => { it('should create a new booking', () => { /* test */ }); });"
+    }
+  ],
+  "tech": ["Java", "Spring Boot", "React", "JavaScript", "Tailwind CSS", "TypeScript"],
+  "github": "https://github.com/SLY06600/SalonDeCoiffure",
+  "live": "https://reservation-salon-coiffure.vercel.app/"
+},
+{
+  "slug": "application-de-comptabilite",
+  "title": "Application de comptabilité personnelle",
+  "description": "Application JavaFX pour gérer les revenus et dépenses personnelles avec visualisation graphique et rapports financiers.",
+  "features": [
+    "Gestion des revenus et des dépenses",
+    "Suivi des catégories de dépenses",
+    "Génération de rapports financiers : bilan, compte de résultat, grand livre",
+    "Visualisation des données avec graphiques interactifs",
+    "Export des rapports au format PDF ou Excel"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/compta-home.png", "title": "Tableau de bord principal" },
+    { "src": "/screenshots/compta-report.png", "title": "Rapports financiers" },
+    { "src": "/screenshots/compta-add-entry.png", "title": "Ajout d’une transaction" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Classe Transaction",
+      "code": "public class Transaction { private String category; private double amount; private LocalDate date; /* getters/setters */ }"
+    },
+    {
+      "title": "Controller JavaFX - Ajout de transaction",
+      "code": "public void addTransaction(ActionEvent event) { Transaction t = new Transaction(categoryField.getText(), Double.parseDouble(amountField.getText()), datePicker.getValue()); transactionList.add(t); }"
+    },
+    {
+      "title": "Génération d’un rapport PDF",
+      "code": "public void generatePDFReport(List<Transaction> transactions) { /* logique pour créer PDF */ }"
+    }
+  ],
+  "tech": ["Java", "JavaFX", "Maven", "JFreeChart", "PDFBox"],
+  "github": "https://github.com/SLY06600/ComptabitileJava",
+  "live": "https://comptabilite-personnelle-javafx.vercel.app/"
+},
+{
+  "slug": "site-personnel-portfolio",
+  "title": "Site personnel / Portfolio",
+  "description": "Mon site personnel développé avec Next.js et Tailwind CSS pour présenter mes projets, compétences et CV en ligne.",
+  "features": [
+    "Présentation de mes projets avec détails et captures d'écran",
+    "Section CV téléchargeable au format PDF",
+    "Page contact avec formulaire fonctionnel",
+    "Design responsive adapté aux mobiles et tablettes",
+    "Animations et transitions fluides"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/portfolio-home.png", "title": "Page d'accueil du portfolio" },
+    { "src": "/screenshots/portfolio-projects.png", "title": "Section projets" },
+    { "src": "/screenshots/portfolio-cv.png", "title": "Section CV" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Carte de projet",
+      "code": "const ProjectCard = ({ title, description }) => (<div className=\"border p-4\"><h2>{title}</h2><p>{description}</p></div>);"
+    },
+    {
+      "title": "Page Next.js - Liste des projets",
+      "code": "export default function Projects() { return (<div>{projects.map((proj) => (<ProjectCard key={proj.slug} {...proj} />))}</div>); }"
+    }
+  ],
+  "tech": ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
+  "github": "",
+  "live": "https://mon-portfolio-git-main-sylvain-baraduc-s-projects.vercel.app/"
+},
+{
+  "slug": "application-de-gestion-de-taches",
+  "title": "Application de gestion de tâches",
+  "description": "Application web pour gérer les tâches quotidiennes avec création, modification, suppression et organisation par catégories.",
+  "features": [
+    "Création, modification et suppression de tâches",
+    "Organisation des tâches par catégories",
+    "Marquage des tâches comme complètes ou en cours",
+    "Filtrage et recherche de tâches",
+    "Interface utilisateur intuitive et responsive"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/todo-home.png", "title": "Page d'accueil de l'application" },
+    { "src": "/screenshots/todo-add-task.png", "title": "Ajout d'une nouvelle tâche" },
+    { "src": "/screenshots/todo-category.png", "title": "Organisation par catégories" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Liste des tâches",
+      "code": "const TaskList = ({ tasks }) => (<ul>{tasks.map((task) => (<li key={task.id}>{task.title}</li>))}</ul>);"
+    },
+    {
+      "title": "Fonction d'ajout de tâche",
+      "code": "function addTask(title) { setTasks([...tasks, { id: Date.now(), title, completed: false }]); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "",
+  "live": ""
+
+},
+{
+  "slug": "application-de-gestion-de-cinema",
+  "title": "Application de gestion de cinéma",
+  "description": "Application web pour gérer les films, les séances et les réservations dans un cinéma.",
+  "features": [
+    "Gestion des films avec ajout, modification et suppression",
+    "Planification des séances pour chaque film",
+    "Système de réservation en ligne pour les clients",
+    "Tableau de bord admin pour gérer les opérations du cinéma",
+    "Statistiques sur les ventes et la fréquentation"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/cinema-home.png", "title": "Page d'accueil du cinéma" },
+    { "src": "/screenshots/cinema-movies.png", "title": "Gestion des films" },
+    { "src": "/screenshots/cinema-reservations.png", "title": "Système de réservation" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Route - Récupération des films",
+      "code": "app.get('/api/movies', async (req, res) => { const movies = await Movie.find(); res.json(movies); });"
+    },
+    {
+      "title": "Composant React - Formulaire de réservation",
+      "code": "function ReservationForm() { const handleSubmit = () => { /* logique réservation */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "",
+  "live": ""
+},
+{
+  "slug": "application-de-gestion-de-bibliotheque",
+  "title": "Application de gestion de bibliothèque",
+  "description": "Application web pour gérer les livres, les emprunts et les membres d'une bibliothèque.",
+  "features": [
+    "Gestion des livres avec ajout, modification et suppression",
+    "Suivi des emprunts et retours de livres",
+    "Gestion des membres avec inscription et profil",
+    "Tableau de bord admin pour gérer les opérations de la bibliothèque",
+    "Notifications par email pour les rappels de retour"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/library-home.png", "title": "Page d'accueil de la bibliothèque" },
+    { "src": "/screenshots/library-books.png", "title": "Gestion des livres" },
+    { "src": "/screenshots/library-members.png", "title": "Gestion des membres" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Route - Récupération des livres",
+      "code": "app.get('/api/books', async (req, res) => { const books = await Book.find(); res.json(books); });"
+    },
+    {
+      "title": "Composant React - Formulaire d'emprunt",
+      "code": "function BorrowForm() { const handleSubmit = () => { /* logique emprunt */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "https://github.com/SLY06600/LibraryManagement",
+  "live": "https://library-management-system.vercel.app/"
+
+},
+{
+  "slug": "application-de-gestion-de-recettes",
+  "title": "Application de gestion de recettes",
+  "description": "Application web pour gérer, partager et découvrir des recettes de cuisine.",
+  "features": [
+    "Ajout, modification et suppression de recettes",
+    "Catégorisation des recettes par type de plat, ingrédient, etc.",
+    "Recherche et filtrage des recettes",
+    "Partage des recettes avec la communauté",
+    "Notation et commentaires sur les recettes"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/recipe-home.png", "title": "Page d'accueil des recettes" },
+    { "src": "/screenshots/recipe-add.png", "title": "Ajout d'une nouvelle recette" },
+    { "src": "/screenshots/recipe-detail.png", "title": "Détails d'une recette" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Liste des recettes",
+      "code": "const RecipeList = ({ recipes }) => (<ul>{recipes.map((recipe) => (<li key={recipe.id}>{recipe.title}</li>))}</ul>);"
+    },
+    {
+      "title": "Fonction d'ajout de recette",
+      "code": "function addRecipe(recipe) { setRecipes([...recipes, recipe]); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "",
+  "live": ""
+
+},
+{
+  "slug": "application-de-gestion-de-voyages",
+  "title": "Application de gestion de voyages",
+  "description": "Application web pour planifier, organiser et suivre ses voyages.",
+  "features": [
+    "Création et gestion des itinéraires de voyage",
+    "Suivi des réservations (vols, hôtels, activités)",
+    "Partage des plans de voyage avec d'autres utilisateurs",
+    "Notifications pour les rappels de réservation",
+    "Journal de bord pour documenter les expériences de voyage"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/travel-home.png", "title": "Page d'accueil des voyages" },
+    { "src": "/screenshots/travel-itinerary.png", "title": "Gestion des itinéraires" },
+    { "src": "/screenshots/travel-reservations.png", "title": "Suivi des réservations" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Liste des voyages",
+      "code": "const TravelList = ({ travels }) => (<ul>{travels.map((travel) => (<li key={travel.id}>{travel.destination}</li>))}</ul>);"
+    },
+    {
+      "title": "Fonction d'ajout de voyage",
+      "code": "function addTravel(travel) { setTravels([...travels, travel]); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "",
+  "live": ""
+},
+{
+  "slug": "application-de-comptabilite",
+  "title": "Application de comptabilité personnelle",
+  "description": "Application JavaFX pour gérer les revenus et dépenses personnelles avec visualisation graphique et rapports financiers.",
+  "features": [
+    "Gestion des revenus et des dépenses",
+    "Suivi des catégories de dépenses",
+    "Génération de rapports financiers : bilan, compte de résultat, grand livre",
+    "Visualisation des données avec graphiques interactifs",
+    "Export des rapports au format PDF ou Excel"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/compta-home.png", "title": "Tableau de bord principal" },
+    { "src": "/screenshots/compta-report.png", "title": "Rapports financiers" },
+    { "src": "/screenshots/compta-add-entry.png", "title": "Ajout d’une transaction" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Classe Transaction",
+      "code": "public class Transaction { private String category; private double amount; private LocalDate date; /* getters/setters */ }"
+    },
+    {
+      "title": "Controller JavaFX - Ajout de transaction",
+      "code": "public void addTransaction(ActionEvent event) { Transaction t = new Transaction(categoryField.getText(), Double.parseDouble(amountField.getText()), datePicker.getValue()); transactionList.add(t); }"
+    },
+    {
+      "title": "Génération d’un rapport PDF",
+      "code": "public void generatePDFReport(List<Transaction> transactions) { /* logique pour créer PDF */ }"
+    }
+  ],
+  "tech": ["Java", "JavaFX", "Maven", "JFreeChart", "PDFBox", "C#", "WPF" ,"MVVM", "Json-server" ],
+  "github": "https://github.com/SLY06600/ComptabitileJava",
+  "live": ""
+},
+{
+  "slug": "application-de-reservation-et-de-localisation-de-camping",
+  "title": "Application de réservation et de localisation de camping",
+  "description": "Application web pour rechercher, localiser et réserver des emplacements de camping.",
+  "features": [
+    "Recherche de campings par emplacement, équipements et disponibilité",
+    "Carte interactive pour localiser les campings",
+    "Système de réservation en ligne avec gestion des disponibilités",
+    "Avis et évaluations des utilisateurs",
+    "Tableau de bord admin pour gérer les campings et les réservations"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/camping-home.png", "title": "Page d'accueil de l'application" },
+    { "src": "/screenshots/camping-map.png", "title": "Carte des campings" },
+    { "src": "/screenshots/camping-reservation.png", "title": "Système de réservation" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Route - Récupération des campings",
+      "code": "app.get('/api/campings', async (req, res) => { const campings = await Camping.find(); res.json(campings); });"
+    },
+    {
+      "title": "Composant React - Formulaire de réservation",
+      "code": "function ReservationForm() { const handleSubmit = () => { /* logique réservation */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "SqLite", "Tailwind CSS", "TypeScript", "Google Maps API", "Leaflet.js" ],
+  "github": "https://github.com/SLY06600/reservationCamping",
+  "live": "https://reservation-camping.vercel.app/"
+},
+{
+  "slug": "application-de-reconnaissance-de-vegetaux",
+  "title": "Application de reconnaissance de végétaux",
+  "description": "Application mobile React Native utilisant l'API Plant.id pour identifier les plantes à partir de photos.",
+  "features": [
+    "Prise de photo ou sélection depuis la galerie",
+    "Envoi de l'image à l'API Plant.id pour analyse et de PlantNet en local",
+    "Affichage des résultats avec nom scientifique, commun et informations détaillées",
+    "transformer les fiches de plantes en PDF vers format texte dans le but de les transformeer format JSON pour une utilisation ultérieure",
+    "representation cartographique des plantes sur une carte interactive avec Leaflet.js en fonction de leur aire de répartition",
+    "Interface utilisateur intuitive et responsive"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/plantid-home.png", "title": "Écran d'accueil de l'application" },
+    { "src": "/screenshots/plantid-result.png", "title": "Résultats de l'identification" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Fonction d'identification de plante",
+      "code": "async function identifyPlant(imageUri) { const formData = new FormData(); formData.append('images', { uri: imageUri, name: 'plant.jpg', type: 'image/jpeg' }); formData.append('organs', ['leaf']); const response = await fetch('https://api.plant.id/v2/identify', { method: 'POST', headers: { 'Content-Type': 'multipart/form-data', 'Api-Key': 'YOUR_API_KEY' }, body : formData }); const data = await response.json(); return data; }"
+    },
+    {
+      "title": "Composant React Native - Affichage des résultats",
+      "code": "const ResultScreen = ({ result }) => (<View><Text>{result.scientific_name}</Text><Text>{result.common_name}</Text></View>);"
+    }
+  ],
+  "tech": ["React Native", "Expo", "TypeScript", "Plant.id API", "PlantNet Api", "Camera API" ,"AsyncStorage" ,"React Navigation", "Axios", "Python", "Flask", "TensorFlow", "Numpy", "Pandas" , "machine learning", "Json-server", "Leaflet.js" ],
+  "github": "https://github.com/SLY06600/ReconnaissanceVegetaux",
+  "live": ""
+},
+{
+  "slug": "application-de-facturation-et-devis",
+  "title": "Application de facturation et devis",
+  "description": "Application web pour créer, gérer et envoyer des factures et devis aux clients.",
+  "features": [
+    "Création de factures et devis personnalisés",
+    "Gestion des clients et des produits/services",
+    "Envoi par email des factures et devis au format PDF",
+    "Suivi des paiements et des statuts",
+    "Tableau de bord avec statistiques financières"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/invoice-home.png", "title": "Page d'accueil de l'application" },
+    { "src": "/screenshots/invoice-create.png", "title": "Création d'une facture" },
+    { "src": "/screenshots/invoice-dashboard.png", "title": "Tableau de bord financier" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Route - Création d'une facture",
+      "code": "app.post('/api/invoices', async (req, res) => { const invoice = new Invoice(req.body); await invoice.save(); res.status(201).json(invoice); });"
+    },
+    {
+      "title": "Composant React - Formulaire de création de facture",
+      "code": "function InvoiceForm() { const handleSubmit = () => { /* logique création facture */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript", "PDFKit", "Nodemailer" ],
+  "github": "",
+  "live": ""
+},
+{
+  "slug": "application-de-gestion-de-stock",
+  "title": "Application de gestion de stock",
+  "description": "Application web pour gérer les stocks, les fournisseurs et les commandes dans un entrepôt.",
+  "features": [
+    "Suivi des niveaux de stock en temps réel",
+    "Gestion des fournisseurs et des produits",
+    "Création et suivi des commandes d'achat",
+    "Alertes pour les niveaux de stock bas",
+    "Rapports sur les mouvements de stock et les performances"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/stock-home.png", "title": "Page d'accueil de l'application" },
+    { "src": "/screenshots/stock-products.png", "title": "Gestion des produits" },
+    { "src": "/screenshots/stock-orders.png", "title": "Suivi des commandes" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "API Route - Récupération des produits",
+      "code": "app.get('/api/products', async (req, res) => { const products = await Product.find(); res.json(products); });"
+    },
+    {
+      "title": "Composant React - Formulaire de création de commande",
+      "code": "function OrderForm() { const handleSubmit = () => { /* logique création commande */ }; return (<form onSubmit={handleSubmit}>...</form>); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript"],
+  "github": "",
+  "live": ""
+},
+{
+  "slug": "application-de-boutique-en-ligne",
+  "title": "Application de boutique en ligne",
+  "description": "Application web e-commerce pour vendre des produits en ligne avec gestion du catalogue, panier et paiement.",
+  "features": [
+    "Catalogue de produits avec catégories et filtres",
+    "Panier d'achat avec gestion des quantités",
+    
+    "Gestion des commandes et des clients",
+    "Tableau de bord admin pour gérer les produits et les ventes",
+    "Remise et codes promotionnels automatisés a partir d'une date",
+    "Api avec json-server pour simuler une base de données et des opérations CRUD"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/shop-home.png", "title": "Page d'accueil de la boutique" },
+    { "src": "/screenshots/shop-product.png", "title": "Détails d'un produit" },
+    { "src": "/screenshots/shop-cart.png", "title": "Panier d'achat" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Carte de produit",
+      "code": "const ProductCard = ({ product }) => (<div className=\"border p-4\"><h2>{product.name}</h2><p>{product.price} €</p></div>);"
+    },
+    {
+      "title": "Fonction d'ajout au panier",
+      "code": "function addToCart(product) { setCart([...cart, product]); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS", "TypeScript", "json-server" ],
+  "github": "",
+  "live": ""
+},
+{
+  "slug": "bulletin-de-paie",
+  "title": "Bulletin de paie",
+  "description": "Application de génération de bulletins de paie en PDF à partir des données des employés.",
+  "features": [
+    "Saisie des informations des employés et des salaires",
+    "Calcul automatique des cotisations sociales et impôts",
+    "Génération de bulletins de paie au format PDF",
+    "Archivage des bulletins de paie pour consultation ultérieure",
+    "Export des données au format Excel"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/payroll-home.png", "title": "Page d'accueil de l'application" },
+    { "src": "/screenshots/payroll-generate.png", "title": "Génération d'un bulletin de paie" },
+    { "src": "/screenshots/payroll-archive.png", "title": "Archivage des bulletins de paie" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Classe Employee",
+      "code": "public class Employee { private String name; private double salary; /* getters/setters */ }"
+    },
+    {
+      "title": "Fonction de génération de bulletin de paie",
+      "code": "public void generatePayslip(Employee employee) { /* logique pour créer PDF */ }"
+    },
+{
+  "title": "Creation de compte ",
+  "code": "// Stockage temporaire en mémoire (à remplacer par une vraie BDD)\nlet users = [];\n\nexport default function handler(req, res) {\n  if (req.method === 'POST') {\n    const { nom, email, password } = req.body;\n\n    // Validation simple côté serveur\n    if (!nom || !email || !password) {\n      return res.status(400).json({ message: 'Tous les champs sont requis.' });\n    }\n\n    // Vérifier si l'email existe déjà\n    const existingUser = users.find((user) => user.email === email);\n    if (existingUser) {\n      return res.status(409).json({ message: 'Un compte avec cet email existe déjà.' });\n    }\n\n    // Ici, on devrais hasher le mot de passe avant de le stocker (ex: bcrypt)\n    // Pour la, on le stocke tel quel (a eviter en prod !)\n\n    users.push({ nom, email, password });\n\n    return res.status(201).json({ message: 'Compte créé avec succès.' });\n  } else {\n    res.setHeader('Allow', ['POST']);\n    res.status(405).end(`Méthode ${req.method} non autorisée`);\n  }\n}"
+
+    }
+  ],
+  "tech": ["Java", "JavaFX", "Maven", "PDFBox", "Apache POI", "React", "Next.js", "Tailwind CSS", "TypeScript", "Prisma", "SQLite", "api" ],
+  "github": "",
+  "live": ""
+  
+},
+{
+  "slug": "application-de-fleuristerie-en-ligne",
+  "title": "Application de fleuristerie en ligne",
+  "description": "Application web e-commerce pour vendre des fleurs et des arrangements floraux en ligne.",
+  "features": [
+    "backend avec routes, models et controllers pour gérer les produits, utilisateurs et commandes, les données sont stockées dans une base de données SQLite via Prisma ORM",
+    "frontend avec react et tailwind css pour l'interface utilisateur, differentes pages pour l'accueil, les Clients, le panier et la gestion des commandes",
+    "Catalogue de fleurs avec catégories et filtres",
+    "Panier d'achat avec gestion des quantités",
+    "Gestion des commandes et des clients",
+    "Tableau de bord admin pour gérer les produits et les ventes",
+    "Remise et codes promotionnels automatisés a partir d'une date"
+  ],
+  "screenshots": [
+    { "src": "/screenshots/florist-home.png", "title": "Page d'accueil de la fleuristerie" },
+    { "src": "/screenshots/florist-product.png", "title": "Détails d'un produit floral" },
+    { "src": "/screenshots/florist-cart.png", "title": "Panier d'achat" }
+  ],
+  "codeSnippets": [
+    {
+      "title": "Composant React - Carte de produit floral",
+      "code": "const FlowerCard = ({ flower }) => (<div className=\"border p-4\"><h2>{flower.name}</h2><p>{flower.price} €</p></div>);"
+    },
+    {
+      "title": "Fonction d'ajout au panier",
+      "code": "function addToCart(flower) { setCart([...cart, flower]); }"
+    }
+  ],
+  "tech": ["React", "Node.js", "Express", "SQLite", "Tailwind CSS", "TypeScript", "Prisma" ],
+  "github": "",
+  "live": ""
+
+}
+
+
+
+
+
+
+]
+
+
+  
+
+

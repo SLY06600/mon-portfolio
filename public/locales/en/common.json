@@ -1,7 +1,7 @@
 {
   "hero": {
     "hello": "Hi, I'm  <blue> Sylvain Baraduc</blue>, I am a",
-    "greetingWords": ["Developer", "Creator", "Passionate"],
+    "greetingWords": ["Developer fullstack ", "Creator", "Passionate"],
     "description": "I create modern, high-performance, and elegant applications.",
     "location": "📍 Based in Antibes, France",
     "cv": "View my CV",
