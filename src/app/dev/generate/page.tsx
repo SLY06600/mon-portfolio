@@ -18,6 +18,7 @@ export default function Page() {
   const [selectedAnnonceIndex, setSelectedAnnonceIndex] = useState<number>(0);
   const [jobText, setJobText] = useState<string>(sampleJob.description || '');
   const [jobTitle, setJobTitle] = useState<string>(sampleJob.title || '');
+  const [useCustomText, setUseCustomText] = useState<boolean>(false);
 
   // build candidate profile from cvData
   function cvToCandidate(): CandidateProfile {
@@ -61,7 +62,17 @@ export default function Page() {
   const [cvSections, setCvSections] = useState<{ prioritySections: string[]; bulletsBySection: Record<string, string[]> } | null>(null);
 
   function makeJob(): Job {
-    // if annonceData available and selected, use it
+    // If user is using custom text (pasted or manually entered), use that
+    if (useCustomText) {
+      return {
+        ...sampleJob,
+        title: jobTitle,
+        description: jobText,
+        requirements: parseRequirements(jobText),
+      };
+    }
+
+    // Otherwise, if annonceData available and selected, use it
     const annonce = annonceData && annonceData[selectedAnnonceIndex];
     if (annonce) {
       return {
@@ -100,6 +111,7 @@ export default function Page() {
     if (annonce) {
       setJobTitle(annonce.title || '');
       setJobText(annonce.description || '');
+      setUseCustomText(false); // Using predefined announcement
     }
   }
 
@@ -107,23 +119,41 @@ export default function Page() {
     <div style={{ padding: 24, fontFamily: 'Inter, system-ui, sans-serif' }}>
       <h1 style={{ marginBottom: 8 }}>Générateur CV / Lettre — Démo</h1>
       <p style={{ color: '#555' }}>
-        Colle ici la description d&#39;une offre (ou utilise l&#39;exemple). Clique « Générer » pour obtenir le score, les
-        sections CV prioritaires et une lettre de motivation.
+        Colle ici la description d&apos;une offre d&apos;emploi (ou choisis une annonce prédéfinie dans la liste). 
+        Clique « Générer » pour obtenir le score, les sections CV prioritaires et une lettre de motivation.
       </p>
 
       <div style={{ display: 'flex', gap: 16, marginTop: 16 }}>
         <div style={{ flex: 1 }}>
-          <label style={{ display: 'block', fontWeight: 600 }}>Titre de l'offre</label>
+          {useCustomText && (
+            <div style={{ 
+              background: '#e3f2fd', 
+              border: '1px solid #2196f3', 
+              padding: '8px 12px', 
+              borderRadius: 6, 
+              marginBottom: 12,
+              fontSize: 14
+            }}>
+              ℹ️ Mode personnalisé : utilisation de votre texte collé
+            </div>
+          )}
+          <label style={{ display: 'block', fontWeight: 600 }}>Titre de l&apos;offre</label>
           <input
             value={jobTitle}
-            onChange={(e) => setJobTitle(e.target.value)}
+            onChange={(e) => {
+              setJobTitle(e.target.value);
+              setUseCustomText(true); // User is manually editing
+            }}
             style={{ width: '100%', padding: 8, marginBottom: 8 }}
           />
 
           <label style={{ display: 'block', fontWeight: 600 }}>Description / Offre</label>
           <textarea
             value={jobText}
-            onChange={(e) => setJobText(e.target.value)}
+            onChange={(e) => {
+              setJobText(e.target.value);
+              setUseCustomText(true); // User is manually editing
+            }}
             rows={12}
             style={{ width: '100%', padding: 8, fontFamily: 'monospace' }}
           />
@@ -136,6 +166,7 @@ export default function Page() {
               onClick={() => {
                 setJobText(sampleJob.description || '');
                 setJobTitle(sampleJob.title || '');
+                setUseCustomText(false);
                 setScore(null);
                 setLetter('');
                 setCvSections(null);
@@ -155,7 +186,6 @@ export default function Page() {
               <select value={selectedAnnonceIndex} onChange={handleSelectAnnonce} style={{ width: '100%', padding: 8 }}>
                 {annonceData && annonceData.length ? (
                   annonceData.map((a, i) => (
-                    // eslint-disable-next-line react/no-array-index-key
                     <option key={a.id || i} value={i}>{a.title || `Annonce ${i + 1}`}</option>
                   ))
                 ) : (
