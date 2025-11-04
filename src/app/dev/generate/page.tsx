@@ -79,7 +79,7 @@ export default function Page() {
         id: annonce.id,
         title: annonce.title || jobTitle,
         company: annonce.contact?.name || '',
-        location: annonce.location || annonce.location,
+        location: annonce.location || '',
         description: annonce.description || jobText,
         requirements: parseRequirements(annonce.description || jobText),
         url: undefined,
@@ -186,7 +186,7 @@ export default function Page() {
               <select value={selectedAnnonceIndex} onChange={handleSelectAnnonce} style={{ width: '100%', padding: 8 }}>
                 {annonceData && annonceData.length ? (
                   annonceData.map((a, i) => (
-                    <option key={a.id || i} value={i}>{a.title || `Annonce ${i + 1}`}</option>
+                    <option key={a.id} value={i}>{a.title || `Annonce ${i + 1}`}</option>
                   ))
                 ) : (
                   <option value={0}>Exemple</option>
